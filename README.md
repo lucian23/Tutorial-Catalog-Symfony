@@ -2,8 +2,8 @@ Lista completa de comenzi folosite in linia de comanda
 
 composer create-project symfony/website-skeleton catalog
 cd catalog
-# completati cu valorile din baza voastra de date
-# in .env inlocuim linia DATABASE astfel  ===>   DATABASE_URL=mysql://root:1234@localhost:3306/catalog?serverVersion=mariadb-10.4.11
+completati cu valorile din baza voastra de date
+in .env inlocuim linia DATABASE astfel  ===>   DATABASE_URL=mysql://root:1234@localhost:3306/catalog?serverVersion=mariadb-10.4.11
 composer recipes:install doctrine/annotations --force -v
 composer recipes:install doctrine/doctrine-bundle --force -v
 composer recipes:install doctrine/doctrine-migrations-bundle --force -v
