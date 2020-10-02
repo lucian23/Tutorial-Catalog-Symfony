@@ -75,11 +75,17 @@ php bin/console make:admin:dashboard
 stergem "\" din namespace App\Controller\Admin*;
 
 adaugam use
+	  
 	  use App\Entity\Profesori;
-  	use App\Entity\Elevi;
-  	use App\Entity\Note;
-  	use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-  	use EasyCorp\Bundle\EasyAdminBundle\Router\CrudUrlGenerator;
+  	
+	use App\Entity\Elevi;
+  	
+	use App\Entity\Note;
+  	
+	use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+  	
+	use EasyCorp\Bundle\EasyAdminBundle\Router\CrudUrlGenerator;
+	
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -91,16 +97,21 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 adaugam menuItem
-      	yield MenuItem::linkToCrud('Profesori', 'Administrare Profesori', Profesori::class);
-        yield MenuItem::linkToCrud('Elevi', 'Administrare Elevi', Elevi::class);
-        yield MenuItem::linkToCrud('Note', 'Administrare Note', Note::class);
+      	
+	yield MenuItem::linkToCrud('Profesori', 'Administrare Profesori', Profesori::class);
+        
+	yield MenuItem::linkToCrud('Elevi', 'Administrare Elevi', Elevi::class);
+        
+	yield MenuItem::linkToCrud('Note', 'Administrare Note', Note::class);
 
 adaugam 
-	      $routeBuilder = $this->get(CrudUrlGenerator::class)->build();
+
+	        $routeBuilder = $this->get(CrudUrlGenerator::class)->build();
               
-        return $this->redirect($routeBuilder->setController(ProfesoriCrudController::class)->generateUrl());
+	        return $this->redirect($routeBuilder->setController(ProfesoriCrudController::class)->generateUrl());
         
 in locul  
+
       #return parent::index();
 
 symfony server:start
